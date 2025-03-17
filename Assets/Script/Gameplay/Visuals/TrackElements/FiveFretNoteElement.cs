@@ -102,7 +102,7 @@ namespace YARG.Gameplay.Visuals
 
                 float len = (float) NoteRef.TimeLength * Player.NoteSpeed;
                 _sustainLine.Initialize(len);
-
+                
                 // Instantiate sustain end marker
                 if (sustainEndPrefab != null)
                 {
@@ -126,11 +126,6 @@ namespace YARG.Gameplay.Visuals
             else
             {
                 ParentPool.Return(this);
-            }
-
-            if (sustainEndInstance != null)
-            {
-                Destroy(sustainEndInstance);
             }
         }
 
@@ -193,8 +188,11 @@ namespace YARG.Gameplay.Visuals
 
             _normalSustainLine.gameObject.SetActive(false);
             _openSustainLine.gameObject.SetActive(false);
+        }
 
-            if (sustainEndInstance != null)
+        public override void SustainEnd(bool finished)
+        {
+            if (finished && sustainEndInstance != null)
             {
                 Destroy(sustainEndInstance);
             }

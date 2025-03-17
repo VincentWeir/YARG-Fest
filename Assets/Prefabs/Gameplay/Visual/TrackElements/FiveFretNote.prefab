@@ -47,11 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteGroups: []
-  StarPowerNoteGroups: []
+  StarpowerNoteGroups: []
   _normalSustainLine: {fileID: 6564187009765405389}
   _openSustainLine: {fileID: 6817911577054343240}
-  sustainEndPrefab: {fileID: 3679417426159040465, guid: fdb08e3607f683741acc0b8da690301c,
-    type: 3}
 --- !u!1 &5594689482099579600
 GameObject:
   m_ObjectHideFlags: 0

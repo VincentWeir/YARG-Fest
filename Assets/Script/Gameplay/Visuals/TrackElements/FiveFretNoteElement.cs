@@ -26,6 +26,9 @@ namespace YARG.Gameplay.Visuals
         private SustainLine _normalSustainLine;
         [SerializeField]
         private SustainLine _openSustainLine;
+        [SerializeField]
+        private GameObject sustainEndPrefab;
+        private GameObject sustainEndInstance;
 
         private SustainLine _sustainLine;
 
@@ -99,6 +102,12 @@ namespace YARG.Gameplay.Visuals
 
                 float len = (float) NoteRef.TimeLength * Player.NoteSpeed;
                 _sustainLine.Initialize(len);
+
+                if (sustainEndPrefab != null)
+                {
+                    sustainEndInstance = Instantiate(sustainEndPrefab, transform);
+                    sustainEndInstance.transform.localPosition = new Vector3(0f, 0f, len);
+                }
             }
 
             // Set note and sustain color
@@ -116,6 +125,11 @@ namespace YARG.Gameplay.Visuals
             else
             {
                 ParentPool.Return(this);
+            }
+
+            if (sustainEndInstance != null)
+            {
+                Destroy(sustainEndInstance);
             }
         }
 
@@ -142,7 +156,14 @@ namespace YARG.Gameplay.Visuals
 
         private void UpdateSustain()
         {
-            _sustainLine.UpdateSustainLine(Player.NoteSpeed * GameManager.SongSpeed);
+            float adjustedSpeed = Player.NoteSpeed * GameManager.SongSpeed;
+            _sustainLine.UpdateSustainLine(adjustedSpeed);
+
+            if (sustainEndInstance != null)
+            {
+                float len = (float) NoteRef.TimeLength * adjustedSpeed;
+                sustainEndInstance.transform.localPosition = new Vector3(0f, 0f, len);
+            }
         }
 
         private void UpdateColor()

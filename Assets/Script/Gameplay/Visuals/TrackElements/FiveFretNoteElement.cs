@@ -103,7 +103,7 @@ namespace YARG.Gameplay.Visuals
                 float len = (float) NoteRef.TimeLength * Player.NoteSpeed;
                 _sustainLine.Initialize(len);
 
-                if (sustainEndPrefab != null)
+                if (sustainEndPrefab != null && sustainEndInstance == null)
                 {
                     sustainEndInstance = Instantiate(sustainEndPrefab, transform);
                     sustainEndInstance.transform.localPosition = new Vector3(0f, 0f, len);
@@ -118,19 +118,29 @@ namespace YARG.Gameplay.Visuals
         {
             base.HitNote();
 
-            if (NoteRef.IsSustain)
-            {
-                HideNotes();
-            }
-            else
+            if (!NoteRef.IsSustain)
             {
                 ParentPool.Return(this);
             }
+            else
+            {
+                HideNotes();
+            }
+        }
+
+        public override void MissNote()
+        {
+            base.MissNote();
 
             if (sustainEndInstance != null)
             {
                 Destroy(sustainEndInstance);
+                sustainEndInstance = null;
             }
+
+            _sustainLine.gameObject.SetActive(false);
+
+            ParentPool.Return(this);
         }
 
         protected override void UpdateElement()
@@ -191,6 +201,26 @@ namespace YARG.Gameplay.Visuals
 
             _normalSustainLine.gameObject.SetActive(false);
             _openSustainLine.gameObject.SetActive(false);
+        }
+
+        public override void SustainEnd(bool finished)
+        {
+            if (sustainEndInstance != null)
+            {
+                Destroy(sustainEndInstance);
+                sustainEndInstance = null;
+            }
+
+            _sustainLine.gameObject.SetActive(false);
+
+            if (finished)
+            {
+                ParentPool.Return(this);
+            }
+            else
+            {
+                HideNotes();
+            }
         }
     }
 }

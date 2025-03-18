@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YARG.Core.Chart;
@@ -31,6 +32,9 @@ namespace YARG.Gameplay.Visuals
         private GameObject sustainEndInstance;
 
         private SustainLine _sustainLine;
+
+        [SerializeField]
+        private float maxSustainLength = 0.1f;
 
         // Make sure the remove it later if it has a sustain
         protected override float RemovePointOffset => (float) NoteRef.TimeLength * Player.NoteSpeed;
@@ -103,10 +107,18 @@ namespace YARG.Gameplay.Visuals
                 float len = (float) NoteRef.TimeLength * Player.NoteSpeed;
                 _sustainLine.Initialize(len);
 
-                if (sustainEndPrefab != null && sustainEndInstance == null)
+                if (len <= maxSustainLength + Mathf.Epsilon && sustainEndPrefab != null && sustainEndInstance == null)
                 {
                     sustainEndInstance = Instantiate(sustainEndPrefab, transform);
                     sustainEndInstance.transform.localPosition = new Vector3(0f, 0f, len);
+
+                    StartCoroutine(FadeIn(sustainEndInstance));
+
+                    _sustainLine._lineRenderer.enabled = false;
+                }
+                else
+                {
+                    _sustainLine._lineRenderer.enabled = true;
                 }
             }
 
@@ -221,6 +233,36 @@ namespace YARG.Gameplay.Visuals
             {
                 HideNotes();
             }
+        }
+
+        private IEnumerator FadeIn(GameObject obj)
+        {
+            Renderer renderer = obj.GetComponent<Renderer>();
+            if (renderer == null) yield break;
+
+            Material material = renderer.material;
+            Color color = material.color;
+    
+            // Set initial alpha to 0 (fully transparent)
+            color.a = 0f;
+            material.color = color;
+
+            // Fade in over time (1 second for example)
+            float fadeDuration = 1.3f;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < fadeDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                color.a = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
+                material.color = color;
+
+                yield return null;  // Wait for the next frame
+            }
+
+            // Ensure the alpha is set to 1 (fully visible) at the end
+            color.a = 1f;
+            material.color = color;
         }
     }
 }

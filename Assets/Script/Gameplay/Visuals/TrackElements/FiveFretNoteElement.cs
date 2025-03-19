@@ -150,7 +150,10 @@ namespace YARG.Gameplay.Visuals
                 sustainEndInstance = null;
             }
 
-            _sustainLine.gameObject.SetActive(false);
+            if (NoteRef.IsSustain)
+            {
+                _sustainLine.gameObject.SetActive(false);
+            }
 
             ParentPool.Return(this);
         }
@@ -179,7 +182,11 @@ namespace YARG.Gameplay.Visuals
         private void UpdateSustain()
         {
             float adjustedSpeed = Player.NoteSpeed * GameManager.SongSpeed;
-            _sustainLine.UpdateSustainLine(adjustedSpeed);
+
+            if (_sustainLine.gameObject.activeSelf)
+            {
+                _sustainLine.UpdateSustainLine(adjustedSpeed);
+            }
 
             if (sustainEndInstance != null)
             {
@@ -223,7 +230,10 @@ namespace YARG.Gameplay.Visuals
                 sustainEndInstance = null;
             }
 
-            _sustainLine.gameObject.SetActive(false);
+            if (NoteRef.IsSustain)
+            {
+                _sustainLine.gameObject.SetActive(false);
+            }
 
             if (finished)
             {

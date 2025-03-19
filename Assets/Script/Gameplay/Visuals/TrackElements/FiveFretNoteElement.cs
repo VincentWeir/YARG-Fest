@@ -258,13 +258,13 @@ namespace YARG.Gameplay.Visuals
             material.color = color;
 
             // Fade in over time (1 second for example)
-            float fadeDuration = 1.3f;
+            float fadeDuration = 1.5f;
             float elapsedTime = 0f;
 
             while (elapsedTime < fadeDuration)
             {
                 elapsedTime += Time.deltaTime;
-                color.a = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
+                color.a = Mathf.Lerp(0f, 0.8f, elapsedTime / fadeDuration);
                 material.color = color;
 
                 yield return null;  // Wait for the next frame

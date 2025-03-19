@@ -50,7 +50,7 @@ MonoBehaviour:
   StarPowerNoteGroups: []
   _normalSustainLine: {fileID: 6564187009765405389}
   _openSustainLine: {fileID: 6817911577054343240}
-  sustainEndPrefab: {fileID: 6384306542049601970, guid: fdb08e3607f683741acc0b8da690301c,
+  sustainEndPrefab: {fileID: 3571146426056086526, guid: 452cda8cb6596144dbf323453459479b,
     type: 3}
   maxSustainLength: 1
 --- !u!1 &5594689482099579600

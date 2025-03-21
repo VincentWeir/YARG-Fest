@@ -1571,7 +1571,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3823443799494859989}
-  - component: {fileID: 1051735628184240032}
   m_Layer: 0
   m_Name: Indicator Stripes
   m_TagString: Untagged
@@ -1596,23 +1595,6 @@ Transform:
   m_Father: {fileID: 1454173494555058106}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1051735628184240032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6757875886157018127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884214ccc7ba4cf1b29993d014d83056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stripPrefab: {fileID: 2016184782533851115, guid: 752765d71842b8c46997f7e8e8e42769,
-    type: 3}
-  _spacing: 0.075
-  _leftContainer: {fileID: 2376652494918439054}
-  _rightContainer: {fileID: 7624731359144739755}
 --- !u!1 &7292162728631984446
 GameObject:
   m_ObjectHideFlags: 0

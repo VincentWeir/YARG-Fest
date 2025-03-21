@@ -42,8 +42,6 @@ namespace YARG.Gameplay.Player
         [SerializeField]
         protected SunburstEffects SunburstEffects;
         [SerializeField]
-        protected IndicatorStripes IndicatorStripes;
-        [SerializeField]
         protected HitWindowDisplay HitWindowDisplay;
 
         [SerializeField]
@@ -78,7 +76,6 @@ namespace YARG.Gameplay.Player
             BeatlineIndex = 0;
 
             var preset = player.EnginePreset;
-            IndicatorStripes.Initialize(preset);
             ComboMeter.Initialize(preset);
 
             // Set fade information and highway length

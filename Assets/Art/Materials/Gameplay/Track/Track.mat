@@ -67,11 +67,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Layer_3_Texture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 82ba7fe2108f82b48903a45dbcbdf798, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Layer_4_Texture:
-        m_Texture: {fileID: 2800000, guid: e349c5c40c8fa2f4d97e8c7fcfa96c47, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6f2bd9f446eca2c48ac5d46549f374d4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -161,7 +161,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Layer_1_Color: {r: 0.058823504, g: 0.058823504, b: 0.058823504, a: 1}
+    - _Layer_1_Color: {r: 0.11764707, g: 0.007843138, b: 0.37647063, a: 1}
     - _Layer_2_Color: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 0.1490196}
     - _Layer_3_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Layer_4_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}

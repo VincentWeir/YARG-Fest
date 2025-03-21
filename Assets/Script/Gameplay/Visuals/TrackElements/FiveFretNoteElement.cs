@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using YARG.Core.Chart;
 using YARG.Gameplay.Player;
+using YARG.Gameplay.Visuals;
 using YARG.Helpers.Extensions;
 using YARG.Themes;
 
@@ -30,6 +31,8 @@ namespace YARG.Gameplay.Visuals
         [SerializeField]
         private GameObject sustainEndPrefab;
         private GameObject sustainEndInstance;
+
+        private Fret _fret;
 
         private SustainLine _sustainLine;
 
@@ -69,7 +72,7 @@ namespace YARG.Gameplay.Visuals
                 NoteGroup = NoteRef.Type switch
                 {
                     GuitarNoteType.Strum => noteGroups[(int) NoteType.Strum],
-                    GuitarNoteType.Hopo  => noteGroups[(int) NoteType.HOPO],
+                    GuitarNoteType.Hopo  => noteGroups[(int) NoteType.Tap],
                     GuitarNoteType.Tap   => noteGroups[(int) NoteType.Strum],
                     _ => throw new ArgumentOutOfRangeException(nameof(NoteRef.Type))
                 };

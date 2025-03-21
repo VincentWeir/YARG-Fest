@@ -109,11 +109,11 @@ namespace YARG.Gameplay.Visuals
             {
                 Layer1 = new()
                 {
-                    Color = FromHex("0F0F0F", 1f)
+                    Color = FromHex("1E0260", 1f)
                 },
                 Layer2 = new()
                 {
-                    Color = FromHex("4B4B4B", 0.15f)
+                    Color = FromHex("FFFFFF", 0.15f)
                 },
                 Layer3 = new()
                 {
@@ -121,7 +121,7 @@ namespace YARG.Gameplay.Visuals
                 },
                 Layer4 = new()
                 {
-                    Color = FromHex("575757", 1f)
+                    Color = FromHex("FFFFFF", 1f)
                 }
             };
 
@@ -129,11 +129,11 @@ namespace YARG.Gameplay.Visuals
             {
                 Layer1 = new()
                 {
-                    Color = FromHex("000933", 1f)
+                    Color = FromHex("1E0260", 1f)
                 },
                 Layer2 = new()
                 {
-                    Color = FromHex("23349C", 0.15f)
+                    Color = FromHex("FFFFFF", 0.15f)
                 },
                 Layer3 = new()
                 {
@@ -141,7 +141,7 @@ namespace YARG.Gameplay.Visuals
                 },
                 Layer4 = new()
                 {
-                    Color = FromHex("2C499E", 1f)
+                    Color = FromHex("FFFFFF", 1f)
                 }
             };
         }
@@ -158,15 +158,6 @@ namespace YARG.Gameplay.Visuals
 
         private void Update()
         {
-            if (GrooveMode)
-            {
-                GrooveState = Mathf.Lerp(GrooveState, 1f, Time.deltaTime * 5f);
-            }
-            else
-            {
-                GrooveState = Mathf.Lerp(GrooveState, 0f, Time.deltaTime * 3f);
-            }
-
             if (StarpowerMode && SettingsManager.Settings.StarPowerHighwayFx.Value is StarPowerHighwayFxMode.On)
             {
                 StarpowerState = Mathf.Lerp(StarpowerState, 1f, Time.deltaTime * 2f);

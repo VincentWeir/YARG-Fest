@@ -28,9 +28,9 @@
         "Instrument": {
             "FiveFretGuitar": "Guitar",
             "FiveFretBass": "Bass",
-            "FiveFretRhythm": "Rhythm Guitar",
+            "FiveFretRhythm": "Drums",
             "FiveFretCoopGuitar": "Co-op Guitar",
-            "Keys": "Keys",
+            "Keys": "Vocals",
             "SixFretGuitar": "Guitar",
             "SixFretBass": "Bass",
             "SixFretRhythm": "Rhythm Guitar",

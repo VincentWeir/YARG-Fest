@@ -292,7 +292,7 @@ namespace YARG.Gameplay.Player
 
             double currentStarPowerAmount = stats.StarPowerAmount;
 
-            if (!stats.IsStarPowerActive && _previousStarPowerAmount < 0.5 && currentStarPowerAmount >= 0.5)
+            if (!stats.IsStarPowerActive && _previousStarPowerAmount < 0.25 && currentStarPowerAmount >= 0.25)
             {
                 TrackView.ShowStarPowerReady();
             }

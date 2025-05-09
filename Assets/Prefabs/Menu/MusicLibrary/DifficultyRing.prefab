@@ -90,9 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227388f778f736d4fb048a3e9fd3951a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instrumentIcon: {fileID: 5480008554624023443}
-  ringSprite: {fileID: 8661995293277028539}
-  ringSprites:
+  _instrumentIcon: {fileID: 5480008554624023443}
+  _ringSprite: {fileID: 8661995293277028539}
+  _ringSprites:
   - {fileID: 1693073548, guid: 3b63aeee98f00194d897a42695807211, type: 3}
   - {fileID: -1483160100, guid: 3b63aeee98f00194d897a42695807211, type: 3}
   - {fileID: 409083877, guid: 3b63aeee98f00194d897a42695807211, type: 3}
@@ -101,6 +101,7 @@ MonoBehaviour:
   - {fileID: 1263751245, guid: 3b63aeee98f00194d897a42695807211, type: 3}
   - {fileID: 1378811686, guid: 3b63aeee98f00194d897a42695807211, type: 3}
   - {fileID: -1032094120, guid: 3b63aeee98f00194d897a42695807211, type: 3}
+  - {fileID: -1755848029, guid: 3b63aeee98f00194d897a42695807211, type: 3}
 --- !u!1 &4109224399020810241
 GameObject:
   m_ObjectHideFlags: 0

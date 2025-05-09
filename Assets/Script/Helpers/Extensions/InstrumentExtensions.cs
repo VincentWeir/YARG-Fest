@@ -10,11 +10,11 @@ namespace YARG.Helpers.Extensions
         {
             return instrument switch
             {
-                Instrument.FiveFretGuitar     => SortAttribute.FiveFretGuitar,
+                Instrument.Keys               => SortAttribute.Keys,
                 Instrument.FiveFretBass       => SortAttribute.FiveFretBass,
+                Instrument.FiveFretGuitar     => SortAttribute.FiveFretGuitar,
                 Instrument.FiveFretRhythm     => SortAttribute.FiveFretRhythm,
                 Instrument.FiveFretCoopGuitar => SortAttribute.FiveFretCoop,
-                Instrument.Keys               => SortAttribute.Keys,
                 Instrument.SixFretGuitar      => SortAttribute.SixFretGuitar,
                 Instrument.SixFretBass        => SortAttribute.SixFretBass,
                 Instrument.SixFretRhythm      => SortAttribute.SixFretRhythm,
@@ -39,11 +39,11 @@ namespace YARG.Helpers.Extensions
         {
             return attribute switch
             {
-                SortAttribute.FiveFretGuitar => Instrument.FiveFretGuitar,
+                SortAttribute.Keys           => Instrument.Keys,
                 SortAttribute.FiveFretBass   => Instrument.FiveFretBass,
+                SortAttribute.FiveFretGuitar => Instrument.FiveFretGuitar,
                 SortAttribute.FiveFretRhythm => Instrument.FiveFretRhythm,
                 SortAttribute.FiveFretCoop   => Instrument.FiveFretCoopGuitar,
-                SortAttribute.Keys           => Instrument.Keys,
                 SortAttribute.SixFretGuitar  => Instrument.SixFretGuitar,
                 SortAttribute.SixFretBass    => Instrument.SixFretBass,
                 SortAttribute.SixFretRhythm  => Instrument.SixFretRhythm,
@@ -68,11 +68,11 @@ namespace YARG.Helpers.Extensions
         {
             return instrument switch
             {
-                Instrument.FiveFretGuitar     => "guitar",
+                Instrument.Keys               => "keys",
                 Instrument.FiveFretBass       => "bass",
+                Instrument.FiveFretGuitar     => "guitar",
                 Instrument.FiveFretRhythm     => "rhythm",
                 Instrument.FiveFretCoopGuitar => "guitarCoop",
-                Instrument.Keys               => "keys",
 
                 Instrument.FourLaneDrums => "drums",
                 Instrument.ProDrums      => "realDrums",
@@ -93,11 +93,11 @@ namespace YARG.Helpers.Extensions
         {
             return name switch
             {
-                "guitar"     => Instrument.FiveFretGuitar,
+                "keys"       => Instrument.Keys,
                 "bass"       => Instrument.FiveFretBass,
+                "guitar"     => Instrument.FiveFretGuitar,
                 "rhythm"     => Instrument.FiveFretRhythm,
                 "guitarCoop" => Instrument.FiveFretCoopGuitar,
-                "keys"       => Instrument.Keys,
 
                 "drums"     => Instrument.FourLaneDrums,
                 "realDrums" => Instrument.ProDrums,

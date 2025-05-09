@@ -174,9 +174,9 @@ namespace YARG.Menu.MusicLibrary
             */
 
 
-            _difficultyRings[0].SetInfo("guitar", Instrument.FiveFretGuitar, entry[Instrument.FiveFretGuitar]);
+            _difficultyRings[0].SetInfo("vocals", Instrument.Keys, entry[Instrument.Keys]);
             _difficultyRings[1].SetInfo("bass", Instrument.FiveFretBass, entry[Instrument.FiveFretBass]);
-            _difficultyRings[2].SetInfo("vocals", Instrument.Keys, entry[Instrument.Keys]);
+            _difficultyRings[2].SetInfo("guitar", Instrument.FiveFretGuitar, entry[Instrument.FiveFretGuitar]);
             _difficultyRings[3].SetInfo("drums", Instrument.FiveFretRhythm, entry[Instrument.FiveFretRhythm]);
             _difficultyRings[4].SetInfo("keys", Instrument.ProGuitar_17Fret, entry[Instrument.ProGuitar_17Fret]);
             _difficultyRings[5].SetInfo("keys", Instrument.ProGuitar_17Fret, entry[Instrument.ProGuitar_17Fret]);

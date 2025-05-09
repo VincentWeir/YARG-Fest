@@ -55,9 +55,9 @@ namespace YARG.Menu.MusicLibrary
                 {
                     values.Intensity = 0;
                 }
-                else if (values.Intensity > 6)
+                else if (values.Intensity > 7)
                 {
-                    values.Intensity = 6;
+                    values.Intensity = 7;
                 }
             }
 

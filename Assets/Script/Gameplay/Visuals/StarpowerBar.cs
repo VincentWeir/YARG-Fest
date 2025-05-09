@@ -27,7 +27,7 @@ namespace YARG.Gameplay.Visuals
             if (beat.Type == BeatlineType.Weak)
                 return;
 
-            if (_starpowerAmount >= 0.5 || _starpowerActive)
+            if (_starpowerAmount >= 0.25 || _starpowerActive)
             {
                 _starpowerBar.material.SetFloat(_pulse, 1f);
             }

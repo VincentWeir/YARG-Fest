@@ -26,11 +26,11 @@
             "Vocals": "Vocals"
         },
         "Instrument": {
-            "FiveFretGuitar": "Guitar",
+            "Keys": "Vocals",
             "FiveFretBass": "Bass",
+            "FiveFretGuitar": "Lead",
             "FiveFretRhythm": "Drums",
             "FiveFretCoopGuitar": "Co-op Guitar",
-            "Keys": "Vocals",
             "SixFretGuitar": "Guitar",
             "SixFretBass": "Bass",
             "SixFretRhythm": "Rhythm Guitar",

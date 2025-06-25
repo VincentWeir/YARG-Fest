@@ -46,10 +46,9 @@ namespace YARG.Gameplay.Visuals
             var tempo = GameManager.Chart.SyncTrack.Tempos.GetPrevious(NoteRef.Tick);
             float bpm = tempo.BeatsPerMinute; // If property name differs, adjust accordingly
 
-            float y = 180f / bpm;
+            float x = 30f * Player.NoteSpeed;
+            float y = x / bpm;
             maxSustainLength = y;
-            if (y >= 1f)
-                y = 1f;
         }
 
         // Make sure the remove it later if it has a sustain
@@ -126,7 +125,8 @@ namespace YARG.Gameplay.Visuals
                 float len = (float) NoteRef.TimeLength * Player.NoteSpeed;
                 _sustainLine.Initialize(len);
 
-                if (len <= maxSustainLength + Mathf.Epsilon && sustainEndPrefab != null && sustainEndInstance == null)
+                const float sustainThresholdTolerance = 0.05f;
+                if (len <= maxSustainLength + sustainThresholdTolerance && sustainEndPrefab != null && sustainEndInstance == null)
                 {
                     sustainEndInstance = Instantiate(sustainEndPrefab, transform);
                     sustainEndInstance.transform.localPosition = new Vector3(0f, 0f, len);

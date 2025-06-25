@@ -52,7 +52,7 @@ MonoBehaviour:
   _openSustainLine: {fileID: 6817911577054343240}
   sustainEndPrefab: {fileID: 3571146426056086526, guid: 452cda8cb6596144dbf323453459479b,
     type: 3}
-  maxSustainLength: 1
+  baseSustainLength: 0.0056
 --- !u!1 &5594689482099579600
 GameObject:
   m_ObjectHideFlags: 0

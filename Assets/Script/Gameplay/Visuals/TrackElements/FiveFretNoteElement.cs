@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,7 +37,20 @@ namespace YARG.Gameplay.Visuals
         private SustainLine _sustainLine;
 
         [SerializeField]
-        private float maxSustainLength = 0.1f;
+        private float maxSustainLength;
+
+        // Dynamically updates maxSustainLength using the equation Y = 180 / BPM, and clamps Y to 1
+        private void UpdateMaxSustainLengthWithTempo()
+        {
+            // Fetch the tempo at the note's tick via YARG.Core API
+            var tempo = GameManager.Chart.SyncTrack.Tempos.GetPrevious(NoteRef.Tick);
+            float bpm = tempo.BeatsPerMinute; // If property name differs, adjust accordingly
+
+            float y = 180f / bpm;
+            maxSustainLength = y;
+            if (y >= 1f)
+                y = 1f;
+        }
 
         // Make sure the remove it later if it has a sustain
         protected override float RemovePointOffset => (float) NoteRef.TimeLength * Player.NoteSpeed;
@@ -105,6 +118,9 @@ namespace YARG.Gameplay.Visuals
             // Set line length
             if (NoteRef.IsSustain)
             {
+                // --- Dynamic sustain length threshold using tempo ---
+                UpdateMaxSustainLengthWithTempo();
+
                 _sustainLine.gameObject.SetActive(true);
 
                 float len = (float) NoteRef.TimeLength * Player.NoteSpeed;
